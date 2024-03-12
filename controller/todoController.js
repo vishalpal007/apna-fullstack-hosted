@@ -28,7 +28,7 @@ exports.updateTodo = asyncHandler(async (req, res) => {
 
 
 exports.deleteTodo = asyncHandler(async (req, res) => {
-    await Todo.findByIdAndUpdate(req.params.id)
+    await Todo.findByIdAndDelete(req.params.id)
 
     res.json({ message: "Todo Delete Success" })
 })

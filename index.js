@@ -12,14 +12,14 @@ app.use(cors({
     origin: process.env.LIVE_URL
 }))
 
-// app.use(express.static(path.join(__dirname, "dist")))
+app.use(express.static(path.join(__dirname, "dist")))
 
 
 app.use("/api/todos", require("./routes/todoRoute"))
 
 app.use("*", (req, res) => {
-    res.status(404).json({ message: "Resource Not Found" })
-    // res.sendFile(path.join(__dirname, "dist", "index.html"))
+    // res.status(404).json({ message: "Resource Not Found" })
+    res.sendFile(path.join(__dirname, "dist", "index.html"))
 })
 
 
